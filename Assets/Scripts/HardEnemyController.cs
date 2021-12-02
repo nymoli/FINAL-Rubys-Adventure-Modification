@@ -32,6 +32,7 @@ public class HardEnemyController : MonoBehaviour
         {
             rubyController = rubyControllerObject.GetComponent<RubyController>();
         }
+        
     }
 
     void Update()
@@ -98,8 +99,7 @@ public class HardEnemyController : MonoBehaviour
 
         if (rubyController != null)
         {
-            rubyController.ChangeScore(1);
-
+            rubyController.ChangeScore(1);            
         }
     }
 }

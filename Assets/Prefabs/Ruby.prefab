@@ -110,6 +110,26 @@ MonoBehaviour:
   healthDecrease: {fileID: 6015898778388922727, guid: af6eee3eb5d17754ba7cdb0e551e34a1,
     type: 3}
   timeInvincible: 2
+  musicClipOne: {fileID: 8300000, guid: 525b5aec590e53a408d9600ca6a82b5a, type: 3}
+  musicClipTwo: {fileID: 8300000, guid: d487e6d4e7a72904388d148f771997ea, type: 3}
+  winMusic: {fileID: 0}
+  loseMusic: {fileID: 0}
+  scoreText: {fileID: 0}
+  winText: {fileID: 0}
+  loseText: {fileID: 0}
+  winTextObject: {fileID: 0}
+  loseTextObject: {fileID: 0}
+  bgMusic: {fileID: 0}
+  cogs: 3
+  cogsCount: {fileID: 0}
+  textDisplay: {fileID: 0}
+  secondsLeft: 60
+  takingAway: 0
+  toggleTimer: 0
+  jambiSound: {fileID: 8300000, guid: abbf8419de7c98d4eaf61afc962b73bb, type: 3}
+  jambiSoundObject: {fileID: 0}
+  footsteps: {fileID: 0}
+  rubyFootsteps: {fileID: 0}
 --- !u!50 &4374945324782765860
 Rigidbody2D:
   serializedVersion: 4

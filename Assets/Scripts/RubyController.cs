@@ -53,7 +53,11 @@ public class RubyController : MonoBehaviour
 
     public int cogs = 3;
     public Text cogsCount;
-    
+        
+    int distanceAway;   
+
+    public AudioClip jambiSound;
+    public GameObject jambiSoundObject;    
 
     // Start is called before the first frame update
     void Start()
@@ -75,6 +79,9 @@ public class RubyController : MonoBehaviour
         winMusic.SetActive(false);
         loseMusic.SetActive(false);
         bgMusic.SetActive(true);
+
+        jambiSoundObject.SetActive(false);        
+
     }
 
     // Update is called once per frame
@@ -111,15 +118,20 @@ public class RubyController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X))
         {
-            RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, lookDirection, 1.5f, LayerMask.GetMask("NPC"));
+            RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, lookDirection, 1.5f, LayerMask.GetMask("NPC"));            
+
             if (hit.collider != null)
             {
+                              
+
                 NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
                 if (character != null)
                 {
                     character.DisplayDialog();
+                    jambiSoundObject.SetActive(true);
+                    PlaySound(jambiSound);
 
-                    if (scoreValue == 3)
+                    if (scoreValue == 4)
                     {
                         SceneManager.LoadScene("Scene2");
                     }
@@ -146,28 +158,53 @@ public class RubyController : MonoBehaviour
 
         scoreText.text = "Robots Fixed: " + scoreValue.ToString();
 
+
+               
         if (Input.GetKey("escape"))
         {
             Application.Quit();
         }
     }
 
+    
+
+    
+
     public void ChangeScore(int ScoreAmount)
     {
         scoreValue += 1;
         scoreText.text = "Robots Fixed: " + scoreText.ToString();
 
-        if (scoreValue == 3)
-        {
-            winText.text = "Talk to Jambi to visit Stage 2.";
-            winTextObject.SetActive(true);
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+            if (scoreValue == 4)
+            {
+                
+                winText.text = "Talk to Jambi to visit Stage 2.";
+                winTextObject.SetActive(true);
 
-            gameOver = true;
+                gameOver = true;
 
-            winMusic.SetActive(true);
-            bgMusic.SetActive(false);
-            audioSource.mute = audioSource.mute;
-        }
+                winMusic.SetActive(true);
+                bgMusic.SetActive(false);
+                audioSource.mute = audioSource.mute;
+
+            }
+
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+            if (scoreValue == 4)
+            {
+
+                winText.text = "Your win! Created by Nyah Molina.";
+                winTextObject.SetActive(true);
+
+                gameOver = true;
+
+                winMusic.SetActive(true);
+                bgMusic.SetActive(false);
+                audioSource.mute = audioSource.mute;
+
+            }
+        
     }
 
 
@@ -178,6 +215,7 @@ public class RubyController : MonoBehaviour
         position.y = position.y + speed * vertical * Time.deltaTime;
 
         rigidbody2d.MovePosition(position);
+        
     }
 
     public void ChangeHealth(int amount)

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - rubyController
   - Ammo
+  - TimeUp
+  - ToughEnemy
   layers:
   - Default
   - TransparentFX

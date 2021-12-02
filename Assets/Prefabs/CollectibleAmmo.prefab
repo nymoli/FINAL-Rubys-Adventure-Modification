@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6715003578882284210}
   - component: {fileID: 6204160135613026691}
   - component: {fileID: 8647665900028683242}
+  - component: {fileID: 4352376274323623274}
   m_Layer: 0
   m_Name: CollectibleAmmo
   m_TagString: Ammo
@@ -109,3 +110,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.96, y: 1.76}
   m_EdgeRadius: 0
+--- !u!114 &4352376274323623274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8806942746903320629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c642d60eda9e8574cba0e55b61f50ccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectedClip: {fileID: 8300000, guid: 6d1565b63ef920a4f82523c5820ef2cf, type: 3}

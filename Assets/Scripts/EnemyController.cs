@@ -17,7 +17,7 @@ public class EnemyController : MonoBehaviour
 
     private RubyController rubyController;
 
-    Animator animator;
+    Animator animator;   
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +31,7 @@ public class EnemyController : MonoBehaviour
         if (rubyControllerObject != null)
         {
             rubyController = rubyControllerObject.GetComponent<RubyController>();
-        }
+        }        
     }
 
     void Update()
@@ -98,8 +98,7 @@ public class EnemyController : MonoBehaviour
 
         if (rubyController != null)
         {
-            rubyController.ChangeScore(1);
-
+            rubyController.ChangeScore(1);            
         }
     }
 }

@@ -321,6 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayTime: 4
   dialogBox: {fileID: 1227919894319702146}
+  collectedClip: {fileID: 8300000, guid: abbf8419de7c98d4eaf61afc962b73bb, type: 3}
 --- !u!1 &6005563497084322554
 GameObject:
   m_ObjectHideFlags: 0
